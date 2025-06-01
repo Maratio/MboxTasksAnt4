@@ -9,6 +9,17 @@
   ],
   "routes": [
     {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/bundle.(.*)",
+      "dest": "/bundle.$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
