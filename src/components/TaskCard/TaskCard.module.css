@@ -130,13 +130,12 @@
 }
 
 .taskActions > button {
-  min-width: 160px;
-  width: 140px;
-  flex: 0 0 140px;
+  flex: 1 1 0;
   justify-content: center;
-  height: 40px !important;
-  min-height: 40px !important;
-  max-height: 40px !important;
+  height: 40px;
+  min-width: 0;
+  white-space: nowrap;
+  width: 100%;
 }
 
 .taskActions button :global(.anticon) {
