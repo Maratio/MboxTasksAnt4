@@ -5,9 +5,9 @@ module.exports = {
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'bundle.[hash].js',
-    clean: true,
-    publicPath: '/'
+    filename: 'bundle.[contenthash].js',
+    publicPath: '/',
+    clean: true
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
@@ -41,17 +41,17 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
-      filename: 'index.html'
-    }),
+      template: './src/index.html'
+    })
   ],
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'public'),
-    },
-    port: 3001,
-    hot: true,
-    historyApiFallback: true,
-    compress: true
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  }
 };
