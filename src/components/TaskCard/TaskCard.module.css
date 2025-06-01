@@ -125,7 +125,8 @@
   margin-top: 16px;
   padding-top: 16px;
   border-top: 1px solid var(--border-color);
-  justify-content: flex-end;
+  justify-content: stretch;
+  width: 100%;
 }
 
 .taskActions > button {
