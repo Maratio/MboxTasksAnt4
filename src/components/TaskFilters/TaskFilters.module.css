@@ -1,0 +1,38 @@
+.filterContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 auto 24px;
+  max-width: 1200px;
+  padding: 0 16px;
+}
+
+.filter {
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.filter :global(.ant-select) {
+  min-width: 200px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .filterContainer {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .filter {
+    flex: 0 1 calc(50% - 12px);
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter {
+    flex: 1 1 100%;
+  }
+}

@@ -1,0 +1,142 @@
+.formContainer {
+  margin: 0 auto 32px;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+  max-width: 600px;
+}
+
+.formContainer:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.formTitle {
+  margin-bottom: 28px;
+  color: #1890ff;
+  font-size: 24px;
+  font-weight: 600;
+  position: relative;
+}
+
+.formTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: #1890ff;
+  border-radius: 2px;
+}
+
+.formActions {
+  margin-top: 32px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+:global(.ant-form-item) {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+:global(.ant-input),
+:global(.ant-select-selector) {
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+}
+
+:global(.ant-input:hover),
+:global(.ant-select-selector:hover) {
+  border-color: #1890ff !important;
+}
+
+:global(.ant-input:focus),
+:global(.ant-select-selector:focus) {
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2) !important;
+}
+
+:global(.ant-btn) {
+  border-radius: 8px;
+  height: 40px;
+  padding: 0 24px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+:global(.ant-btn-primary) {
+  background: #1890ff;
+  box-shadow: 0 2px 8px rgba(24, 144, 255, 0.35);
+}
+
+:global(.ant-btn-primary:hover) {
+  background: #40a9ff;
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.45);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .formContainer {
+    padding: 24px;
+    margin-bottom: 32px;
+  }
+
+  .formActions {
+    flex-direction: column;
+  }
+
+  .formActions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .formContainer {
+    padding: 16px;
+    margin-bottom: 24px;
+  }
+
+  :global(.ant-input),
+  :global(.ant-select-selector) {
+    font-size: 14px !important;
+  }
+}
+
+.formContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .formContainer {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .formContainer {
+    max-width: 100%;
+  }
+}
+
+/* Стили для управления порядком отображения элементов в форме */
+:global(.ant-form-item) {
+  display: flex;
+  flex-direction: column;
+}
+
+:global(.ant-form-item-explain) {
+  order: 3;
+}
+
+:global(.ant-input-textarea-show-count::after) {
+  order: 2;
+}
+
+.errorAfterCount :global(.ant-form-item-explain) {
+  margin-top: 8px;
+}

@@ -1,0 +1,16 @@
+.select {
+  min-width: 140px;
+}
+
+.select :global(.ant-select-selector) {
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+}
+
+.select :global(.ant-select-selector:hover) {
+  border-color: #1890ff !important;
+}
+
+.select :global(.ant-select-focused .ant-select-selector) {
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2) !important;
+} 
