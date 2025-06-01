@@ -2,11 +2,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.tsx',
-  output: {
+  entry: './src/index.tsx',  output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.[contenthash].js',
-    publicPath: './',
+    publicPath: '/',
     clean: true
   },
   resolve: {
@@ -18,10 +17,21 @@ module.exports = {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         use: 'babel-loader',
-      },
-      {
+      },      {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                auto: true,
+                localIdentName: '[name]__[local]--[hash:base64:5]'
+              },
+              importLoaders: 1
+            }
+          }
+        ]
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -52,6 +62,16 @@ module.exports = {
   optimization: {
     splitChunks: {
       chunks: 'all'
+    }
+  },  devServer: {
+    port: 3000,
+    open: true,
+    hot: true,
+    historyApiFallback: true,
+    compress: true,
+    static: {
+      directory: path.join(__dirname, 'public'),
+      publicPath: '/'
     }
   }
 };
