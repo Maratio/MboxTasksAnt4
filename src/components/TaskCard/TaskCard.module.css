@@ -1,53 +1,42 @@
-:root {
-  --border-color: #f0f0f0;
-  --disabled-color: rgba(0, 0, 0, 0.25);
-  --disabled-bg: #f5f5f5;
-  --border-hover: #d9d9d9;
-  --text-dark: rgba(0, 0, 0, 0.88);
-  --success-color: #52c41a;
-  --success-bg: rgba(82, 196, 26, 0.65);
-  --success-shadow: rgba(82, 196, 26, 0.25);
-  --text-grey: #8c8c8c;
-}
-
 /* Card Base Styles */
 .taskCard {
-  margin-bottom: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
-  border: 1px solid var(--border-color);
+  margin-bottom: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  border: 1px solid #d9d9d9;
+  background-color: #ffffff;
+  padding: 16px;
 }
 
 .taskCard:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* Completed State */
 .taskCard.completed {
   opacity: 0.8;
-  background-color: var(--disabled-bg);
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
 .taskCard.completed .taskTitle,
 .taskCard.completed .taskDescription {
   text-decoration: line-through;
-  color: var(--text-grey);
+  color: rgba(0, 0, 0, 0.45);
 }
 
 /* Task Content */
 .taskTitle {
   font-size: 18px;
   font-weight: 600;
-  color: #262626;
+  color: rgba(0, 0, 0, 0.88);
   margin-bottom: 12px;
 }
 
 .taskDescription {
-  color: #595959;
+  color: rgba(0, 0, 0, 0.45);
   margin-bottom: 16px;
-  line-height: 1.5;
+  line-height: 1.5715;
 }
 
 /* Meta Information */
@@ -58,7 +47,7 @@
 }
 
 .timestamp {
-  color: var(--text-grey);
+  color: rgba(0, 0, 0, 0.45);
   font-size: 14px;
   display: flex;
   align-items: center;
@@ -73,7 +62,7 @@
   display: flex;
   align-items: center;
   font-size: 14px;
-  color: var(--text-grey);
+  color: rgba(0, 0, 0, 0.45);
   margin-right: 12px;
 }
 
@@ -98,24 +87,24 @@
 
 .priorityLow {
   color: #fff;
-  background: var(--success-color);
+  background: #52c41a;
 }
 
 /* Status Indicators */
 .statusCompleted {
-  color: var(--success-color) !important;
-  background: rgba(82, 196, 26, 0.1) !important;
-  border-color: rgba(82, 196, 26, 0.2) !important;
+  color: #52c41a;
+  background: #f6ffed;
+  border-color: #d9d9d9;
 }
 
 .statusActive {
-  color: #1890ff !important;
-  background: rgba(24, 144, 255, 0.1) !important;
-  border-color: rgba(24, 144, 255, 0.2) !important;
+  color: #1890ff;
+  background: #e6f7ff;
+  border-color: #d9d9d9;
 }
 
 .completed .status {
-  color: var(--success-color);
+  color: #52c41a;
 }
 
 /* Action Buttons */
@@ -124,18 +113,18 @@
   gap: 16px;
   margin-top: 16px;
   padding-top: 16px;
-  border-top: 1px solid var(--border-color);
-  justify-content: flex-end;
+  border-top: 1px solid #d9d9d9;
+  justify-content: stretch;
+  width: 100%;
 }
 
 .taskActions > button {
-  min-width: 160px;
-  width: 140px;
-  flex: 0 0 140px;
+  flex: 1 1 0;
   justify-content: center;
-  height: 40px !important;
-  min-height: 40px !important;
-  max-height: 40px !important;
+  height: 40px;
+  min-width: 0;
+  white-space: nowrap;
+  width: 100%;
 }
 
 .taskActions button :global(.anticon) {
@@ -147,31 +136,31 @@
   margin-right: 0;
 }
 
-.completeButton[data-status="active"] {
-  background-color: var(--success-bg) !important;
-  border-color: var(--success-bg) !important;
-  box-shadow: 0 2px 8px var(--success-shadow);
+.taskActions button.completeButton[data-status="active"] {
+  color: #fff !important;
+  background-color: #95de64 !important;
+  border-color: #95de64 !important;
 }
 
-.completeButton[data-status="active"]:hover {
-  background-color: rgba(82, 196, 26, 0.75) !important;
-  border-color: rgba(82, 196, 26, 0.75) !important;
-  box-shadow: 0 4px 12px rgba(82, 196, 26, 0.35);
+.taskActions button.completeButton[data-status="active"]:hover {
+  color: #fff !important;
+  background-color: #95de64 !important;
+  border-color: #95de64 !important;
 }
 
-.completeButton[data-status="completed"],
-.completeButton[data-status="completed"]:hover,
-.completeButton[data-status="completed"]:focus,
-.completeButton[data-status="completed"]:active {
+.taskActions button.completeButton[data-status="completed"],
+.taskActions button.completeButton[data-status="completed"]:hover,
+.taskActions button.completeButton[data-status="completed"]:focus,
+.taskActions button.completeButton[data-status="completed"]:active {
   background-color: #fff !important;
-  color: var(--text-dark) !important;
-  border-color: var(--border-hover) !important;
+  color: rgba(0, 0, 0, 0.88) !important;
+  border-color: #d9d9d9 !important;
   box-shadow: none !important;
 }
 
 /* Button Hover States */
-.taskActions button:not([data-status="completed"]):hover {
-  color: #fff !important;
+.taskActions button:hover:not([data-status="completed"]):not(.completeButton) {
+  color: #fff;
 }
 
 /* Disabled States */
@@ -181,17 +170,17 @@
 .taskActions button:disabled:hover,
 .taskActions button:disabled:focus,
 .taskActions button:disabled:active {
-  opacity: 0.5 !important;
-  cursor: not-allowed !important;
-  background-color: var(--disabled-bg) !important;
-  color: var(--disabled-color) !important;
-  border-color: var(--border-hover) !important;
-  box-shadow: none !important;
-  transform: none !important;
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.25);
+  border-color: #d9d9d9;
+  box-shadow: none;
+  transform: none;
 }
 
 .taskActions button:global(.ant-btn):disabled * {
-  color: var(--disabled-color) !important;
+  color: rgba(0, 0, 0, 0.25);
 }
 
 /* Media Queries */
