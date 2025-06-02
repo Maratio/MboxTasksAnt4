@@ -1,5 +1,5 @@
 import React from "react";
-import { FilterFilled } from "@ant-design/icons";
+import { FilterFilled,FilterOutlined  } from "@ant-design/icons";
 import { useTaskFilters } from "../../hooks/useTaskFilters";
 import { CustomSelect, CustomButton } from "../UI";
 import styles from "./TaskFilters.module.css";
@@ -16,6 +16,7 @@ const TaskFilters: React.FC = () => {
     priorityOptions,
     sortOptions,
     statusOptions,
+    isFiltersActive
   } = useTaskFilters();
 
   return (
@@ -45,14 +46,10 @@ const TaskFilters: React.FC = () => {
         />
       </div>{" "}
       <CustomButton
-        className={`${styles.resetButton} ${
-          filter !== "all" || statusFilter !== "all" || sortOrder !== "desc"
-            ? styles.active
-            : ""
-        }`}
         onClick={handleResetFilters}
         title="Сбросить фильтры"
-        icon={<FilterFilled />}
+        icon={isFiltersActive ? <FilterFilled  /> : <FilterOutlined />}
+
       />
     </div>
   );

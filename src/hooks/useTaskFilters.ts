@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { useAppDispatch, useAppSelector } from "./redux";
 import { setFilter, setSortOrder, setStatusFilter } from "../store/taskSlice";
 import {
@@ -32,10 +32,17 @@ export const useTaskFilters = () => {
   const { filter, sortOrder, statusFilter } = useAppSelector(
     (state) => state.tasks
   );
+  const [isFiltersActive, setIsFiltersActive] = useState(false);
+
+  
 
   const handleFilterChange = useCallback(
     (value: FilterValue) => {
       dispatch(setFilter(value));
+      // if (filter !== "all" || statusFilter !== "all" || sortOrder !== "desc"){
+    setIsFiltersActive(true)
+    console.log('Фильтр изменен');
+  // }
     },
     [dispatch]
   );
@@ -43,6 +50,8 @@ export const useTaskFilters = () => {
   const handleSortChange = useCallback(
     (value: SortValue) => {
       dispatch(setSortOrder(value));
+    setIsFiltersActive(true)
+
     },
     [dispatch]
   );
@@ -50,14 +59,21 @@ export const useTaskFilters = () => {
   const handleStatusFilterChange = useCallback(
     (value: StatusFilterValue) => {
       dispatch(setStatusFilter(value));
+    setIsFiltersActive(true)
+
     },
     [dispatch]
   );
+
   const handleResetFilters = useCallback(() => {
     dispatch(setFilter("all"));
     dispatch(setSortOrder("desc"));
     dispatch(setStatusFilter("all"));
+    setIsFiltersActive(false);
+    console.log('Фильтр сброшен', isFiltersActive);
   }, [dispatch]);
+
+  
 
   return {
     filter,
@@ -70,5 +86,6 @@ export const useTaskFilters = () => {
     priorityOptions,
     sortOptions,
     statusOptions,
+    isFiltersActive,
   };
 };
