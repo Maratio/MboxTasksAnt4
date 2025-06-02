@@ -25,13 +25,35 @@
   transition: all 0.3s;
 }
 
+.resetButton :global(.anticon) {
+  color: rgba(0, 0, 0, 0.45);
+  transition: color 0.3s;
+}
+
+/* Active state */
 .resetButton.active {
-  color: #1890ff !important;
   border-color: #1890ff !important;
 }
 
-.resetButton:hover svg {
-  color: #1890ff;
+.resetButton.active :global(.anticon) {
+  color: #1890ff !important;
+}
+
+/* Hover states */
+.resetButton:hover {
+  border-color: #d9d9d9 !important;
+}
+
+.resetButton.active:hover {
+  border-color: #40a9ff !important;
+}
+
+.resetButton:hover :global(.anticon) {
+  color: rgba(0, 0, 0, 0.88);
+}
+
+.resetButton.active:hover :global(.anticon) {
+  color: #40a9ff !important;
 }
 
 @media (max-width: 768px) {

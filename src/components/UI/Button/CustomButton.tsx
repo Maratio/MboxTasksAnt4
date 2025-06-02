@@ -13,7 +13,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   className,
   ...props
 }) => {
-  const buttonClass = `${styles.button} ${styles[variant]} ${className || ""} ant-btn-default ant-btn-color-default ant-btn-variant-outlined`;
+  const buttonClass = `${styles.button} ${styles[variant]} ${className || ""}`;
 
   return (
     <AntButton {...props} className={buttonClass}>
