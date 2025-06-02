@@ -29,24 +29,44 @@ export const theme: ThemeConfig = {
     // Тени
     boxShadow: "0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02)",
     boxShadowSecondary: "0 4px 12px rgba(0, 0, 0, 0.08)",
-  },
-  components: {
-    Button: {
+  },  components: {    Button: {
+      // Размеры и отступы
       paddingContentHorizontal: 24,
-      // Стили для кнопки "Завершить"
-      primaryColor: "#95de64",
-      defaultBg: "transparent",
-      defaultColor: "rgba(0, 0, 0, 0.88)",
-      defaultBorderColor: "#d9d9d9",
-      // Стили для кнопок отмены
-      defaultHoverBg: "transparent",
-      defaultHoverColor: "rgba(0, 0, 0, 0.88)",
-      defaultHoverBorderColor: "#d9d9d9",
+      controlHeight: 40,
+      fontSize: 14,
+      
+      // Базовые стили
+      colorBgBase: "transparent",
+      colorText: "rgba(0, 0, 0, 0.88)",
+      
+      // Primary стили
+      colorPrimary: "#95de64",
+      colorInfo: "#95de64",
+      
+      // Danger стили
+      colorError: "#ff4d4f",
+      colorErrorBg: "rgba(255, 77, 79, 0.65)",
+      colorErrorBorder: "rgba(255, 77, 79, 0.65)",
+      
+      // Границы
+      borderRadius: 8,
+      
+      // Отключенное состояние
+      colorTextDisabled: "rgba(0, 0, 0, 0.25)",
+      colorBgContainerDisabled: "rgba(0, 0, 0, 0.04)",
+      
+      // Иконки
+      marginXXS: 8,
     },
     Card: {
-      padding: 24,
-      borderRadius: 12,
-      boxShadow: "0 4px 16px rgba(0, 0, 0, 0.08)",
+      padding: 16,
+      paddingLG: 16,
+      borderRadius: 8,
+      boxShadow: "0 1px 2px 0 rgba(0, 0, 0, 0.03)",
+      borderRadiusLG: 8,
+      colorBorder: "#d9d9d9",
+      colorBgContainer: "#ffffff",
+      colorBorderSecondary: "#d9d9d9",
     },
     Input: {
       borderRadius: 8,

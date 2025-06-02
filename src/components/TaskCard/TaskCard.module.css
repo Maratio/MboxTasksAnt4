@@ -1,28 +1,17 @@
 /* Card Base Styles */
 .taskCard {
   margin-bottom: 16px;
-  border-radius: 8px;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-  border: 1px solid #d9d9d9;
-  background-color: #ffffff;
-  padding: 16px;
-}
-
-.taskCard:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* Completed State */
 .taskCard.completed {
   opacity: 0.8;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 
 .taskCard.completed .taskTitle,
 .taskCard.completed .taskDescription {
   text-decoration: line-through;
-  color: rgba(0, 0, 0, 0.45);
 }
 
 /* Task Content */
@@ -114,78 +103,39 @@
   margin-top: 16px;
   padding-top: 16px;
   border-top: 1px solid #d9d9d9;
-  justify-content: stretch;
   width: 100%;
 }
 
 .taskActions > button {
   flex: 1 1 0;
-  flex: 1 1 0;
   justify-content: center;
-  height: 40px;
   min-width: 0;
   white-space: nowrap;
-  width: 100%;
-  height: 40px;
-  min-width: 0;
-  white-space: nowrap;
-  width: 100%;
 }
 
-.taskActions button :global(.anticon) {
-  margin-right: 8px;
-}
-
-/* Complete Button States */
-.completeButton {
-  margin-right: 0;
-}
-
-.taskActions button.completeButton[data-status="active"] {
+/* Стили для кнопки завершения */
+.completeButton[data-status="active"]:global(.ant-btn) {
   color: #fff !important;
   background-color: #95de64 !important;
   border-color: #95de64 !important;
 }
 
-.taskActions button.completeButton[data-status="active"]:hover {
-  color: #fff !important;
-  background-color: #95de64 !important;
-  border-color: #95de64 !important;
+.completeButton[data-status="active"]:global(.ant-btn):hover {
+  background-color: #85d654 !important;
+  border-color: #85d654 !important;
 }
 
-.taskActions button.completeButton[data-status="completed"],
-.taskActions button.completeButton[data-status="completed"]:hover,
-.taskActions button.completeButton[data-status="completed"]:focus,
-.taskActions button.completeButton[data-status="completed"]:active {
-  background-color: #fff !important;
+.completeButton[data-status="completed"]:global(.ant-btn) {
+  opacity: 0.8;
+  background-color: transparent !important;
   color: rgba(0, 0, 0, 0.88) !important;
   border-color: #d9d9d9 !important;
-  box-shadow: none !important;
 }
 
-/* Button Hover States */
-.taskActions button:hover:not([data-status="completed"]):not(.completeButton) {
-  color: #fff;
-}
-
-/* Disabled States */
-.taskActions button:disabled,
-.taskActions button:global(.ant-btn-primary):disabled,
-.taskActions button:global(.ant-btn-danger):disabled,
-.taskActions button:disabled:hover,
-.taskActions button:disabled:focus,
-.taskActions button:disabled:active {
-  opacity: 0.5;
-  cursor: not-allowed;
-  background-color: rgba(0, 0, 0, 0.04);
-  color: rgba(0, 0, 0, 0.25);
-  border-color: #d9d9d9;
-  box-shadow: none;
-  transform: none;
-}
-
-.taskActions button:global(.ant-btn):disabled * {
-  color: rgba(0, 0, 0, 0.25);
+.completeButton[data-status="completed"]:global(.ant-btn):hover {
+  background-color: transparent !important;
+  border-color: #d9d9d9 !important;
+  color: rgba(0, 0, 0, 0.88) !important;
 }
 
 /* Media Queries */

@@ -9,6 +9,10 @@
   transition: all 0.3s ease;
 }
 
+.button:hover {
+  transform: translateY(-1px);
+}
+
 .primary {
   background-color: rgba(24, 144, 255, 0.65) !important;
   color: #fff !important;
@@ -24,6 +28,14 @@
   color: #fff;
 }
 
+.primary:global(.ant-btn) {
+  box-shadow: 0 2px 8px rgba(149, 222, 100, 0.25);
+}
+
+.primary:global(.ant-btn):hover {
+  box-shadow: 0 4px 12px rgba(149, 222, 100, 0.35);
+}
+
 .danger {
   background-color: rgba(255, 77, 79, 0.65) !important;
   color: #fff !important;
@@ -37,6 +49,18 @@
   box-shadow: 0 4px 12px rgba(255, 77, 79, 0.35);
   transform: translateY(-1px);
   color: #fff;
+}
+
+.danger:global(.ant-btn) {
+  background-color: rgba(255, 77, 79, 0.65);
+  border-color: rgba(255, 77, 79, 0.65);
+  box-shadow: 0 2px 8px rgba(255, 77, 79, 0.25);
+}
+
+.danger:global(.ant-btn):hover {
+  background-color: rgba(255, 77, 79, 0.75);
+  border-color: rgba(255, 77, 79, 0.75);
+  box-shadow: 0 4px 12px rgba(255, 77, 79, 0.35);
 }
 
 .default {
