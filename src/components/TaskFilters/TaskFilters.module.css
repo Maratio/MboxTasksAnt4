@@ -14,8 +14,8 @@
   max-width: 300px;
 }
 
+/* Стили для Select внутри фильтра */
 .filter :global(.ant-select) {
-  min-width: 200px;
   width: 100%;
 }
 

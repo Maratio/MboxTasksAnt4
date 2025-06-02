@@ -1,11 +1,10 @@
 .formContainer {
   margin: 0 auto 32px;
   padding: 24px;
-  background: #ffffff;
-  border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transition: box-shadow 0.3s ease;
   max-width: 1200px;
+  background: #ffffff;
 }
 
 .formContainer:hover {
@@ -14,10 +13,10 @@
 
 .formTitle {
   margin-bottom: 28px;
-  color: #1890ff;
   font-size: 24px;
   font-weight: 600;
   position: relative;
+  color: #1890ff;
 }
 
 .formTitle::after {
@@ -27,7 +26,7 @@
   left: 0;
   width: 40px;
   height: 3px;
-  background: #1890ff;
+  background: currentColor;
   border-radius: 2px;
 }
 

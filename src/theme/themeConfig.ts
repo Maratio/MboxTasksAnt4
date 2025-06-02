@@ -1,10 +1,9 @@
 import { ThemeConfig } from "antd";
 
-export const theme: ThemeConfig = {
-  token: {
+export const theme: ThemeConfig = {  token: {
     // Базовые цвета
-    colorPrimary: "#1890ff",
-    colorInfo: "#1890ff",
+    colorPrimary: "#95de64",
+    colorInfo: "#95de64",
     colorSuccess: "#52c41a",
     colorWarning: "#faad14",
     colorError: "#ff4d4f",
@@ -67,18 +66,41 @@ export const theme: ThemeConfig = {
       colorBorder: "#d9d9d9",
       colorBgContainer: "#ffffff",
       colorBorderSecondary: "#d9d9d9",
-    },
-    Input: {
+    },    Input: {
       borderRadius: 8,
-      activeShadow: "0 0 0 2px rgba(24, 144, 255, 0.2)",
-    },
-    Select: {
+      activeShadow: "0 0 0 2px rgba(149, 222, 100, 0.2)",
+    },Select: {
       borderRadius: 8,
       controlHeight: 40,
+      colorPrimary: "#95de64",
+      colorBorder: "#d9d9d9",
+      colorPrimaryHover: "#95de64",
+      controlOutline: "rgba(149, 222, 100, 0.2)",
+      controlOutlineWidth: 2,
+      motion: true,
+      motionDurationMid: "0.3s",
     },
     Modal: {
       borderRadius: 12,
       padding: 24,
+      colorBorder: "#f0f0f0",
+      borderRadiusLG: 12,
+      headerBg: "transparent",
+      titleFontSize: 16,
+      fontSizeHeading5: 16,
+    },    Form: {
+      colorPrimary: "#95de64",
+      borderRadius: 12,
+      colorBgContainer: "#ffffff",
+      marginXXL: 32,
+    },
+    List: {
+      borderRadius: 12,
+      colorBgContainer: "#ffffff",
+      padding: 24,
+      marginXXL: 48,
+      boxShadow: "0 4px 16px rgba(0, 0, 0, 0.08)",
+      colorBorderSecondary: "#f0f0f0",
     },
   },
 };

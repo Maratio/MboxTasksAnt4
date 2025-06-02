@@ -12,42 +12,42 @@
 }
 
 .taskList {
-  margin-top: 24px;
+  margin: 24px auto 0;
   max-width: 1200px;
-  margin: 0 auto;
   padding: 20px;
 }
 
 .taskListContainer {
-  padding-top: 20px;
   margin-top: 48px;
+  padding: 24px;
   background: #fff;
   border-radius: 12px;
-  padding: 24px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 @media (max-width: 768px) {
-  .taskList {
+  .taskList,
+  .taskListContainer {
     padding: 16px;
   }
 
   .taskListContainer {
-    padding-top: 16px;
     margin-top: 32px;
-    padding: 16px;
   }
 }
 
 @media (max-width: 480px) {
-  .taskList {
+  .listContainer {
+    padding: 16px;
+  }
+
+  .taskList,
+  .taskListContainer {
     padding: 12px;
   }
 
   .taskListContainer {
-    padding-top: 12px;
     margin-top: 24px;
-    padding: 12px;
   }
 }
 
