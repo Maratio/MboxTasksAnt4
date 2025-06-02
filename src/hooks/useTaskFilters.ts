@@ -1,7 +1,13 @@
 import { useCallback } from "react";
 import { useAppDispatch, useAppSelector } from "./redux";
 import { setFilter, setSortOrder, setStatusFilter } from "../store/taskSlice";
-import { FilterValue, StatusFilterValue, SortValue, Priority, TaskStatus } from "../types/interfaces";
+import {
+  FilterValue,
+  StatusFilterValue,
+  SortValue,
+  Priority,
+  TaskStatus,
+} from "../types/interfaces";
 
 const priorityOptions = [
   { value: "all", label: "Все приоритеты" },
@@ -40,19 +46,27 @@ export const useTaskFilters = () => {
     },
     [dispatch]
   );
-  
+
   const handleStatusFilterChange = useCallback(
     (value: StatusFilterValue) => {
       dispatch(setStatusFilter(value));
     },
     [dispatch]
-  );  return {
+  );
+  const handleResetFilters = useCallback(() => {
+    dispatch(setFilter("all"));
+    dispatch(setSortOrder("desc"));
+    dispatch(setStatusFilter("all"));
+  }, [dispatch]);
+
+  return {
     filter,
     sortOrder,
     statusFilter,
     handleFilterChange,
     handleSortChange,
     handleStatusFilterChange,
+    handleResetFilters,
     priorityOptions,
     sortOptions,
     statusOptions,

@@ -19,6 +19,21 @@
   width: 100%;
 }
 
+.resetButton {
+  padding: 0 12px !important;
+  margin-left: 8px;
+  transition: all 0.3s;
+}
+
+.resetButton.active {
+  color: #1890ff !important;
+  border-color: #1890ff !important;
+}
+
+.resetButton:hover svg {
+  color: #1890ff;
+}
+
 @media (max-width: 768px) {
   .filterContainer {
     justify-content: center;
