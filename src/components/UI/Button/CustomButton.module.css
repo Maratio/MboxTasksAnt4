@@ -64,12 +64,14 @@
 }
 
 .default {
-  background: #fff;
-  border-color: #d9d9d9;
+  background: #fff !important;
+  border-color: #d9d9d9 !important;
 }
 
-.default:hover {
-  color: #40a9ff;
-  border-color: #40a9ff;
+.default:hover,
+.default:focus {
+  color: #1890ff !important;
+  border-color: #1890ff !important;
+  background: #fff !important;
   transform: translateY(-1px);
 }
